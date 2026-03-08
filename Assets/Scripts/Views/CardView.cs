@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -18,5 +19,20 @@ public class CardView : MonoBehaviour
         description.text = card.Description;
         mana.text = card.Mana.ToString();
         imageSR.sprite = card.Image;
+    }
+
+    private void OnMouseEnter()
+    {
+        Debug.Log("OnMouseEnter");
+        wrapper.SetActive(false);
+        Vector3 pos = new(transform.position.x, -2, 0);
+        CardViewHoverSystem.Instance.Show(Card, pos);
+    }
+    
+    private void OnMouseExit()
+    {
+        Debug.Log("OnMouseExit");
+        CardViewHoverSystem.Instance.Hide();
+        wrapper.SetActive(true);
     }
 }
