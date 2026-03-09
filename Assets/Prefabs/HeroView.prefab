@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8128566404293611750
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5633074691687541618}
+  - component: {fileID: 3803997324736359030}
+  m_Layer: 0
+  m_Name: HeroView
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5633074691687541618
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8128566404293611750}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2495162557701937848}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3803997324736359030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8128566404293611750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c859f927b503d4a4095023e4239ae4f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HeroVIew
+  healthText: {fileID: 5677395109684831448}
+  spriteRenderer: {fileID: 1184786849992244192}
+--- !u!1001 &4891874536039307713
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5633074691687541618}
+    m_Modifications:
+    - target: {fileID: 490357498272387019, guid: 273e7ba5f66f24742af10230bbd742cb, type: 3}
+      propertyPath: m_Name
+      value: CombatantViewBase
+      objectReference: {fileID: 0}
+    - target: {fileID: 7008714656668386169, guid: 273e7ba5f66f24742af10230bbd742cb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7008714656668386169, guid: 273e7ba5f66f24742af10230bbd742cb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7008714656668386169, guid: 273e7ba5f66f24742af10230bbd742cb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7008714656668386169, guid: 273e7ba5f66f24742af10230bbd742cb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7008714656668386169, guid: 273e7ba5f66f24742af10230bbd742cb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7008714656668386169, guid: 273e7ba5f66f24742af10230bbd742cb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7008714656668386169, guid: 273e7ba5f66f24742af10230bbd742cb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7008714656668386169, guid: 273e7ba5f66f24742af10230bbd742cb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7008714656668386169, guid: 273e7ba5f66f24742af10230bbd742cb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7008714656668386169, guid: 273e7ba5f66f24742af10230bbd742cb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8349394305364479950, guid: 273e7ba5f66f24742af10230bbd742cb, type: 3}
+      propertyPath: m_Name
+      value: HealthText
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 273e7ba5f66f24742af10230bbd742cb, type: 3}
+--- !u!212 &1184786849992244192 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6021973113249571361, guid: 273e7ba5f66f24742af10230bbd742cb, type: 3}
+  m_PrefabInstance: {fileID: 4891874536039307713}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2495162557701937848 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7008714656668386169, guid: 273e7ba5f66f24742af10230bbd742cb, type: 3}
+  m_PrefabInstance: {fileID: 4891874536039307713}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5677395109684831448 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 948365326111423769, guid: 273e7ba5f66f24742af10230bbd742cb, type: 3}
+  m_PrefabInstance: {fileID: 4891874536039307713}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshPro
