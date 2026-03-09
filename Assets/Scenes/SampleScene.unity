@@ -711,6 +711,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 452355570}
   m_CullTransparentMesh: 1
+--- !u!1 &512938712
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 512938713}
+  m_Layer: 0
+  m_Name: DrawPilePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &512938713
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512938712}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.6, y: -5.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1480740351}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &585574010
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,6 +1238,7 @@ Transform:
   - {fileID: 596118120}
   - {fileID: 3444612040057561109}
   - {fileID: 803457421}
+  - {fileID: 1480740351}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1262562741
@@ -1274,7 +1306,41 @@ Transform:
   - {fileID: 1032073687}
   - {fileID: 706424771}
   - {fileID: 951163543}
+  - {fileID: 1906506384}
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1480740350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1480740351}
+  m_Layer: 0
+  m_Name: PileViews
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1480740351
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480740350}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 512938713}
+  - {fileID: 1765119888}
+  m_Father: {fileID: 1249592709}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1627506358
 GameObject:
@@ -1320,8 +1386,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b4227ed1a999104eb61d0769dae8afe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TestSystem
-  handView: {fileID: 803457422}
-  cardData: {fileID: 11400000, guid: 9a19c84f7fbedbc4592d43e74fc793e4, type: 2}
+  deckData:
+  - {fileID: 11400000, guid: 9a19c84f7fbedbc4592d43e74fc793e4, type: 2}
+  - {fileID: 11400000, guid: 9a19c84f7fbedbc4592d43e74fc793e4, type: 2}
+  - {fileID: 11400000, guid: 9a19c84f7fbedbc4592d43e74fc793e4, type: 2}
+  - {fileID: 11400000, guid: 9a19c84f7fbedbc4592d43e74fc793e4, type: 2}
+  - {fileID: 11400000, guid: 9a19c84f7fbedbc4592d43e74fc793e4, type: 2}
+  - {fileID: 11400000, guid: 9a19c84f7fbedbc4592d43e74fc793e4, type: 2}
+  - {fileID: 11400000, guid: 9a19c84f7fbedbc4592d43e74fc793e4, type: 2}
+  - {fileID: 11400000, guid: 9a19c84f7fbedbc4592d43e74fc793e4, type: 2}
+  - {fileID: 11400000, guid: 9a19c84f7fbedbc4592d43e74fc793e4, type: 2}
 --- !u!1 &1713031783
 GameObject:
   m_ObjectHideFlags: 0
@@ -1424,6 +1498,37 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &1765119887
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1765119888}
+  m_Layer: 0
+  m_Name: DiscardPilePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1765119888
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765119887}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.6, y: -5.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1480740351}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1829674294
 GameObject:
   m_ObjectHideFlags: 0
@@ -1556,6 +1661,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 803457421}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1906506383
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1906506384}
+  - component: {fileID: 1906506385}
+  m_Layer: 0
+  m_Name: CardSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1906506384
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906506383}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1294245227}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1906506385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906506383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41e1de4415b58a9418bde8db616c639c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CardSystem
+  handView: {fileID: 803457422}
+  drawPilePoint: {fileID: 1480740351}
+  discardPilePoint: {fileID: 1765119888}
 --- !u!4 &385242329118091460
 Transform:
   m_ObjectHideFlags: 0
