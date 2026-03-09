@@ -33,7 +33,7 @@ public class HandView : MonoBehaviour
     private IEnumerator UpdateCardPositons(float duration)
     { 
         if (cards.Count == 0) yield break;
-        float cardSpacing = 1f / 10f;
+        float cardSpacing = 1f / Mathf.Max(cards.Count, 2);
         float firstCardPosition = 0.5f - (cards.Count - 1) * cardSpacing / 2f;
         Spline splien = splineContainer.Spline;
 

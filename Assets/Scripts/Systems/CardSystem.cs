@@ -45,20 +45,19 @@ public class CardSystem : Singleton<CardSystem>
     // Performers
     private IEnumerator DrawCardsPerformer(DrawCardsGA drawCardsGA)
     {
-        int actualAmount = Mathf.Min(drawCardsGA.Amount, drawPile.Count);
-        int notDrawAmount = drawCardsGA.Amount - actualAmount;
-        for (int i = 0; i < actualAmount; i++)
+        int amount = drawCardsGA.Amount;
+        for (int i = 0; i < amount; i++)
         {
-            yield return DrawCard();
-        }
-
-        if (notDrawAmount > 0)
-        {
-            RefillDeck();
-            for (int i = 0; i < notDrawAmount; i++)
+            if (drawPile.Count == 0 && discardPile.Count > 0)
             {
-                yield return DrawCard();
+                RefillDeck();
             }
+            if (drawPile.Count == 0)
+            {
+                Debug.LogWarning("DrawCardsPerformer: No cards left to draw.");
+                break;
+            }
+            yield return DrawCard();
         }
     }
     
@@ -106,9 +105,18 @@ public class CardSystem : Singleton<CardSystem>
     private IEnumerator DrawCard()
     {
         Card card = drawPile.Draw();
+        if (card == null)
+        {
+            Debug.LogWarning("DrawCard: No card to draw, draw pile exhausted.");
+            yield break;
+        }
+
         hand.Add(card);
-        CardView cardView =
-            CardViewCreator.Instance.CreateCardView(card, drawPilePoint.position, drawPilePoint.rotation);
+
+        CardView cardView = CardViewCreator.Instance.CreateCardView(card, drawPilePoint.position, drawPilePoint.rotation);
+        if (cardView == null)
+            yield break;
+
         yield return handView.AddCard(cardView);
     }
     

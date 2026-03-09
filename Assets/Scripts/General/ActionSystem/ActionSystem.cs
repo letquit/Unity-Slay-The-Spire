@@ -18,16 +18,55 @@ public class ActionSystem : Singleton<ActionSystem>
     /// 执行指定的游戏动作
     /// </summary>
     /// <param name="action">要执行的游戏动作</param>
-    /// <param name="OnPerformFinished">动作执行完成后的回调函数</param>
+    /// <param name="OnPerformFinished">动作执行完成后的回调函数，可选参数</param>
     public void Perform(GameAction action, Action OnPerformFinished = null)
     {
         if (IsPerforming) return;
         IsPerforming = true;
-        StartCoroutine(Flow(action, () =>
+        StartCoroutine(PerformCoroutine(action, OnPerformFinished));
+    }
+
+    /// <summary>
+    /// 执行游戏动作的协程方法，处理动作流程并捕获异常
+    /// </summary>
+    /// <param name="action">要执行的游戏动作</param>
+    /// <param name="OnPerformFinished">动作执行完成后的回调函数</param>
+    /// <returns>协程迭代器</returns>
+    private IEnumerator PerformCoroutine(GameAction action, Action OnPerformFinished)
+    {
+        Exception coroutineException = null;
+        
+        // 创建动作流程迭代器，在流程结束时重置执行状态并调用完成回调
+        IEnumerator flow = Flow(action, () =>
         {
             IsPerforming = false;
             OnPerformFinished?.Invoke();
-        }));
+        });
+
+        while (true)
+        {
+            object current = null;
+            try
+            {
+                if (!flow.MoveNext())
+                    break;
+                current = flow.Current;
+            }
+            catch (Exception ex)
+            {
+                coroutineException = ex;
+                break;
+            }
+            yield return current;
+        }
+
+        // 处理协程中发生的异常，记录错误日志并确保状态正确复位
+        if (coroutineException != null)
+        {
+            Debug.LogError("ActionSystem: Exception in action flow - " + coroutineException);
+            IsPerforming = false; // 保证复位
+            OnPerformFinished?.Invoke();
+        }
     }
 
     /// <summary>
