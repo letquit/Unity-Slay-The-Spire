@@ -881,6 +881,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1480740351}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &558042899
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 558042900}
+  - component: {fileID: 558042901}
+  m_Layer: 0
+  m_Name: HeroSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &558042900
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558042899}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1294245227}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &558042901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558042899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eaeaa93b5e55d54d9a9d0c84151cdcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HeroSystem
+  <HeroView>k__BackingField: {fileID: 6403687883685348212}
 --- !u!1 &585574010
 GameObject:
   m_ObjectHideFlags: 0
@@ -1629,6 +1674,7 @@ Transform:
   - {fileID: 833947406}
   - {fileID: 660882608}
   - {fileID: 1681220236}
+  - {fileID: 558042900}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1480740350
@@ -1708,20 +1754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd9144c9449e5e04c85263f67a6add4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MatchSetupSystem
-  deckData:
-  - {fileID: 11400000, guid: 9a19c84f7fbedbc4592d43e74fc793e4, type: 2}
-  - {fileID: 11400000, guid: 9a19c84f7fbedbc4592d43e74fc793e4, type: 2}
-  - {fileID: 11400000, guid: 9a19c84f7fbedbc4592d43e74fc793e4, type: 2}
-  - {fileID: 11400000, guid: 9a19c84f7fbedbc4592d43e74fc793e4, type: 2}
-  - {fileID: 11400000, guid: 9a19c84f7fbedbc4592d43e74fc793e4, type: 2}
-  - {fileID: 11400000, guid: 9a19c84f7fbedbc4592d43e74fc793e4, type: 2}
-  - {fileID: 11400000, guid: 9a19c84f7fbedbc4592d43e74fc793e4, type: 2}
-  - {fileID: 11400000, guid: 305047d8d79eaf34998e48bd6dc2d929, type: 2}
-  - {fileID: 11400000, guid: 305047d8d79eaf34998e48bd6dc2d929, type: 2}
-  - {fileID: 11400000, guid: 305047d8d79eaf34998e48bd6dc2d929, type: 2}
-  - {fileID: 11400000, guid: 305047d8d79eaf34998e48bd6dc2d929, type: 2}
-  - {fileID: 11400000, guid: 305047d8d79eaf34998e48bd6dc2d929, type: 2}
-  - {fileID: 11400000, guid: 305047d8d79eaf34998e48bd6dc2d929, type: 2}
+  heroData: {fileID: 11400000, guid: 140b911f0102b3f45b958cd73694f1f1, type: 2}
 --- !u!1 &1681220235
 GameObject:
   m_ObjectHideFlags: 0
@@ -2660,6 +2693,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5633074691687541618, guid: 912297d7a493a1545a7951b1a4c1660e, type: 3}
   m_PrefabInstance: {fileID: 6403687883685348210}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6403687883685348212 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3803997324736359030, guid: 912297d7a493a1545a7951b1a4c1660e, type: 3}
+  m_PrefabInstance: {fileID: 6403687883685348210}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c859f927b503d4a4095023e4239ae4f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HeroVIew
 --- !u!1 &6475119168447589555
 GameObject:
   m_ObjectHideFlags: 0
