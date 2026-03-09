@@ -23,6 +23,25 @@ public class DamageSystem : MonoBehaviour
             target.Damage(dealDamageGA.Amount);
             Instantiate(damageVFX, target.transform.position, Quaternion.identity);
             yield return new WaitForSeconds(0.15f);
+            if (target.CurrentHealth <= 0)
+            {
+                //TODO: 复活
+                // if (HasReviveCondition(target))
+                // {
+                //     ReviveTarget(target);
+                // }
+                // else if (target is EnemyView enemyView)
+                if (target is EnemyView enemyView)
+                {
+                    KillEnemyGA killEnemyGA = new(enemyView);
+                   ActionSystem.Instance.AddReaction(killEnemyGA); 
+                }
+                else
+                {
+                    // Do some game over logic here
+                    // Open Game Over Screen
+                }
+            }
         }
     }
 }
