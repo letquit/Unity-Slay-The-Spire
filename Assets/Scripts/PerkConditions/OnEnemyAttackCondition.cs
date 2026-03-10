@@ -1,0 +1,21 @@
+using System;
+using UnityEngine;
+
+[Serializable]
+public class OnEnemyAttackCondition : PerkCondition
+{
+    public override void SubscribeCondition(Action<GameAction> reaction)
+    {
+        ActionSystem.SubscribeReaction<AttackHeroGA>(reaction, reactionTiming);
+    }
+
+    public override void UnsubscribeCondition(Action<GameAction> reaction)
+    {
+        ActionSystem.UnsubscribeReaction<AttackHeroGA>(reaction, reactionTiming);
+    }
+
+    public override bool SubConditionIsMet(GameAction gameAction)
+    {
+        return true;
+    }
+}
