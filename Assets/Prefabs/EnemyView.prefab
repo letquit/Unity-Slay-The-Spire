@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1795977054385117981}
   - component: {fileID: 6991538180131807399}
   - component: {fileID: 6987999819902589886}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 2322836290112791710}
   - component: {fileID: 5323894715196550941}
   - component: {fileID: 782042443373556068}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AttackText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,6 +264,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: CombatantViewBase
       objectReference: {fileID: 0}
+    - target: {fileID: 490357498272387019, guid: 273e7ba5f66f24742af10230bbd742cb, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4953773682339454561, guid: 273e7ba5f66f24742af10230bbd742cb, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6021973113249571361, guid: 273e7ba5f66f24742af10230bbd742cb, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -311,6 +319,10 @@ PrefabInstance:
     - target: {fileID: 8349394305364479950, guid: 273e7ba5f66f24742af10230bbd742cb, type: 3}
       propertyPath: m_Name
       value: HealthText
+      objectReference: {fileID: 0}
+    - target: {fileID: 8349394305364479950, guid: 273e7ba5f66f24742af10230bbd742cb, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
