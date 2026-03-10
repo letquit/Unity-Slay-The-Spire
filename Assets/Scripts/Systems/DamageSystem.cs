@@ -20,27 +20,37 @@ public class DamageSystem : MonoBehaviour
     {
         foreach (var target in dealDamageGA.Targets)
         {
-            target.Damage(dealDamageGA.Amount);
-            Instantiate(damageVFX, target.transform.position, Quaternion.identity);
-            yield return new WaitForSeconds(0.15f);
-            if (target.CurrentHealth <= 0)
+            int finalDamage = dealDamageGA.ModifiedAmount;
+            
+            if (finalDamage > 0)
             {
-                //TODO: 复活
-                // if (HasReviveCondition(target))
-                // {
-                //     ReviveTarget(target);
-                // }
-                // else if (target is EnemyView enemyView)
-                if (target is EnemyView enemyView)
+                target.ApplyFinalDamage(finalDamage);
+                Instantiate(damageVFX, target.transform.position, Quaternion.identity);
+                yield return new WaitForSeconds(0.15f);
+                
+                if (target.CurrentHealth <= 0)
                 {
-                    KillEnemyGA killEnemyGA = new(enemyView);
-                   ActionSystem.Instance.AddReaction(killEnemyGA); 
+                    //TODO: 复活
+                    // if (HasReviveCondition(target))
+                    // {
+                    //     ReviveTarget(target);
+                    // }
+                    // else if (target is EnemyView enemyView)
+                    if (target is EnemyView enemyView)
+                    {
+                        KillEnemyGA killEnemyGA = new(enemyView);
+                        ActionSystem.Instance.AddReaction(killEnemyGA); 
+                    }
+                    else
+                    {
+                        // Game Over or other
+                    }
                 }
-                else
-                {
-                    // Do some game over logic here
-                    // Open Game Over Screen
-                }
+            }
+            else
+            {
+                Instantiate(damageVFX, target.transform.position, Quaternion.identity);
+                yield return new WaitForSeconds(0.15f);
             }
         }
     }
