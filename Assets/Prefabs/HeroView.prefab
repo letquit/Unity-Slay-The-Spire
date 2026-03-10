@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HeroVIew
   healthText: {fileID: 5677395109684831448}
   spriteRenderer: {fileID: 1184786849992244192}
+  statusEffectsUI: {fileID: 9080572947464202519}
 --- !u!1001 &4891874536039307713
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -129,3 +130,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshPro
+--- !u!114 &9080572947464202519 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4460746183098691798, guid: 273e7ba5f66f24742af10230bbd742cb, type: 3}
+  m_PrefabInstance: {fileID: 4891874536039307713}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02097c8709f253946af6efe702ca825b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StatusEffectsUI
